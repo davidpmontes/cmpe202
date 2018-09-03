@@ -1,25 +1,27 @@
 
-public class GumballMachineTwoQuarters extends GumballMachine {
-	
-	public GumballMachineTwoQuarters(int size) {
+public class GumballMachineTwoQuarters extends GumballMachine
+{	
+	public GumballMachineTwoQuarters(int size)
+	{
 		super(size);
+		setCost(50);
 	}
 	
-	public void insertCoin( int value ) {
-		if ( 25 == value )
-			num_money += value;
-		
-		if (num_money > 50)
-			num_money = 50;
+	public void insertCoin( int value )
+	{
+		if ( getNum_money() < getCost())
+			if (25 == value )
+				setNum_money(getNum_money() + value);
 	}
 
-	public void turnCrank() {
-		if ( 50 == num_money )
+	public void turnCrank()
+	{
+		if ( getCost() <= getNum_money() )
     	{
-    		if ( num_gumballs > 0 )
+    		if ( getNum_gumballs() > 0 )
     		{
-    			num_gumballs-- ;
-    			num_money = 0 ;
+    			setNum_gumballs(getNum_gumballs() - 1) ;
+    			setNum_money(0) ;
     			System.out.println( "Thanks for your quarters.  Gumball Ejected!" ) ;
     		}
     		else
@@ -29,10 +31,10 @@ public class GumballMachineTwoQuarters extends GumballMachine {
     	}
     	else 
     	{
-    		if ( 0 == num_money )
-    			System.out.println( "Please insert two quarters" ) ;
-    		else if ( 25 == num_money )
-    			System.out.println( "Please insert a quarter" );
+    		if ( 0 == getNum_money() )
+    			System.out.println( "Please insert two quarters." ) ;
+    		else if ( 25 == getNum_money() )
+    			System.out.println( "Please insert a quarter." );
     	}        
 	}
 }

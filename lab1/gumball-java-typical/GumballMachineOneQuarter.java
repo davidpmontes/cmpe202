@@ -1,24 +1,26 @@
 
-public class GumballMachineOneQuarter extends GumballMachine {
-
-	public GumballMachineOneQuarter(int size) {
+public class GumballMachineOneQuarter extends GumballMachine
+{
+	public GumballMachineOneQuarter( int size )
+	{
 		super(size);
+		setCost(25);
 	}
 	
 	public void insertCoin( int value )
     {
 		if ( 25 == value )
-			num_money = value;
+			setNum_money(value);
     }
     
     public void turnCrank()
     {
-    	if ( 25 == num_money )
+    	if ( getCost() <= getNum_money() )
     	{
-    		if ( num_gumballs > 0 )
+    		if ( getNum_gumballs() > 0 )
     		{
-    			num_gumballs-- ;
-    			num_money = 0 ;
+    			setNum_gumballs(getNum_gumballs() - 1) ;
+    			setNum_money(0) ;
     			System.out.println( "Thanks for your quarter.  Gumball Ejected!" ) ;
     		}
     		else
@@ -28,7 +30,7 @@ public class GumballMachineOneQuarter extends GumballMachine {
     	}
     	else 
     	{
-    		System.out.println( "Please insert a quarter" ) ;
+    		System.out.println( "Please insert a quarter." ) ;
     	}        
     }
 }
