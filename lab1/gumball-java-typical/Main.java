@@ -3,7 +3,7 @@
 public class Main {
 
 	public static void main(String[] args) {
-		GumballMachine gumballMachine = new GumballMachine(5);
+		GumballMachineOneQuarter gumballMachine = new GumballMachineOneQuarter(5);
 
 		System.out.println(gumballMachine);
 
