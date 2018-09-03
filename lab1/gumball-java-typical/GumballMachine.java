@@ -1,33 +1,29 @@
 
 public class GumballMachine
 {
-
-    private int num_gumballs;
-    private boolean has_quarter;
-
-    public GumballMachine( int size )
+	protected int num_gumballs;
+	protected int num_money;
+	
+	public GumballMachine( int size )
+	{
+		num_gumballs = size;
+		num_money = 0;
+	}
+	
+    public void insertCoin( int value )
     {
-        // initialise instance variables
-        this.num_gumballs = size;
-        this.has_quarter = false;
-    }
-
-    public void insertQuarter(int coin)
-    {
-        if ( coin == 25 )
-            this.has_quarter = true ;
-        else 
-            this.has_quarter = false ;
+		if ( 25 == value )
+			num_money = value;
     }
     
     public void turnCrank()
     {
-    	if ( this.has_quarter )
+    	if ( 25 == num_money )
     	{
-    		if ( this.num_gumballs > 0 )
+    		if ( num_gumballs > 0 )
     		{
-    			this.num_gumballs-- ;
-    			this.has_quarter = false ;
+    			num_gumballs-- ;
+    			num_money = 0 ;
     			System.out.println( "Thanks for your quarter.  Gumball Ejected!" ) ;
     		}
     		else
