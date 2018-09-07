@@ -10,7 +10,7 @@ public class GumballMachineAllCoins extends GumballMachine
 	public void insertCoin( int value )
     {
 		if ( num_money < cost)
-			if (5 == value || 10 == value || 25 == value)
+			if (value > 0)
 				num_money += value;	
     }
     
@@ -31,7 +31,7 @@ public class GumballMachineAllCoins extends GumballMachine
     	}
     	else 
     	{
-	    	System.out.println( String.format( "Please insert %d cents. (Quarters, dimes and nickels only).", cost - num_money) );
+	    	System.out.println( String.format( "Please insert %d cents.", cost - num_money) );
     	}        
     }
 }
