@@ -71,7 +71,17 @@ public class GumballMachine {
 	int getCount() {
 		return count;
 	}
- 
+	
+	int getMoney()
+	{
+		return money;
+	}
+	
+	int getCost()
+	{
+		return cost;
+	}
+	
 	void refill(int count) {
 		this.count = count;
 		state = notEnoughMoneyState;

@@ -54,7 +54,7 @@ public class SoldState implements State {
 			case TwoQuarters:
 			case AllCoins:
 				gumballMachine.releaseBall();
-				if (gumballMachine.getCount() > 0) {
+				if (gumballMachine.count > 0) {
 					gumballMachine.setState(gumballMachine.getNotEnoughMoneyState());
 				} else {
 					System.out.println("Oops, out of gumballs!");
