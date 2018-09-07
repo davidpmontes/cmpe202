@@ -1,6 +1,12 @@
 
 
 public class GumballMachine {
+	
+	public enum Type {
+	    OneQuarter,
+	    TwoQuarters,
+	    AllCoins,
+	}
  
 	State soldOutState;
 	State notEnoughMoneyState;
@@ -9,9 +15,9 @@ public class GumballMachine {
  
 	State state = soldOutState;
 	int count = 0;
-	String type;
+	Type type;
  
-	public GumballMachine(int numberGumballs, String type) {
+	public GumballMachine(int numberGumballs, Type type) {
 		soldOutState = new SoldOutState(this);
 		notEnoughMoneyState = new NotEnoughMoneyState(this);
 		hasEnoughMoneyState = new HasEnoughMoneyState(this);
@@ -25,16 +31,16 @@ public class GumballMachine {
 	}
  
 	public void insertCoin( int value) {
-		state.insertCoin( value );
+		state.insertCoin( value, this.type );
 	}
  
 	public void ejectMoney() {
-		state.ejectMoney();
+		state.ejectMoney(this.type);
 	}
  
 	public void turnCrank() {
-		state.turnCrank();
-		state.dispense();
+		state.turnCrank(this.type);
+		state.dispense(this.type);
 	}
 
 	void setState(State state) {

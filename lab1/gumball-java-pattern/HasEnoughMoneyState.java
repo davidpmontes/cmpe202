@@ -6,21 +6,27 @@ public class HasEnoughMoneyState implements State {
 		this.gumballMachine = gumballMachine;
 	}
   
-	public void insertCoin( int value) {
+	public void insertCoin( int value, GumballMachine.Type type) {
+//		switch (type)
+//		{
+//			case "OneQuarter":
+//				break;
+//				
+//		}
 		System.out.println("You can't insert another quarter");
 	}
  
-	public void ejectMoney() {
+	public void ejectMoney( GumballMachine.Type type ) {
 		System.out.println("Quarter returned");
 		gumballMachine.setState(gumballMachine.getNoQuarterState());
 	}
  
-	public void turnCrank() {
+	public void turnCrank( GumballMachine.Type type ) {
 		System.out.println("You turned...");
 		gumballMachine.setState(gumballMachine.getSoldState());
 	}
 
-    public void dispense() {
+    public void dispense( GumballMachine.Type type ) {
         System.out.println("No gumball dispensed");
     }
  

@@ -7,3 +7,10 @@
 /State.class
 /HasEnoughMoneyState.class
 /NotEnoughMoneyState.class
+/SoldStateOneQuarter.class
+/GameballMachineOneQuarter.class
+/GumballMachineOneQuarter.class
+/HasEnoughMoneyStateOneQuarter.class
+/NotEnoughMoneyStateOneQuarter.class
+/SoldOutStateOneQuarter.class
+/GumballMachine$Type.class

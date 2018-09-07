@@ -8,19 +8,19 @@ public class SoldState implements State {
         this.gumballMachine = gumballMachine;
     }
        
-	public void insertCoin( int value) {
+	public void insertCoin( int value, GumballMachine.Type type ) {
 		System.out.println("Please wait, we're already giving you a gumball");
 	}
  
-	public void ejectMoney() {
+	public void ejectMoney( GumballMachine.Type type ) {
 		System.out.println("Sorry, you already turned the crank");
 	}
  
-	public void turnCrank() {
+	public void turnCrank( GumballMachine.Type type ) {
 		System.out.println("Turning twice doesn't get you another gumball!");
 	}
  
-	public void dispense() {
+	public void dispense( GumballMachine.Type type ) {
 		gumballMachine.releaseBall();
 		if (gumballMachine.getCount() > 0) {
 			gumballMachine.setState(gumballMachine.getNoQuarterState());
