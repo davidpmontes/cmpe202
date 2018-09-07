@@ -9,24 +9,60 @@ public class SoldState implements State {
     }
        
 	public void insertCoin( int value, GumballMachine.Type type ) {
-		System.out.println("Please wait, we're already giving you a gumball");
+		switch(type)
+		{
+			case OneQuarter:	
+			case TwoQuarters:
+			case AllCoins:
+				System.out.println("Please wait, we're already giving you a gumball");
+				break;
+			default:
+				break;
+		}
 	}
  
 	public void ejectMoney( int money, GumballMachine.Type type ) {
-		System.out.println("Sorry, you already turned the crank");
+		switch(type)
+		{
+			case OneQuarter:	
+			case TwoQuarters:
+			case AllCoins:
+				System.out.println("Sorry, you already turned the crank");
+				break;
+			default:
+				break;
+		}
 	}
  
 	public void turnCrank( GumballMachine.Type type ) {
-		System.out.println("Turning twice doesn't get you another gumball!");
+		switch(type)
+		{
+			case OneQuarter:	
+			case TwoQuarters:
+			case AllCoins:
+				System.out.println("Turning twice doesn't get you another gumball!");
+				break;
+			default:
+				break;
+		}
 	}
  
 	public void dispense( GumballMachine.Type type ) {
-		gumballMachine.releaseBall();
-		if (gumballMachine.getCount() > 0) {
-			gumballMachine.setState(gumballMachine.getNotEnoughMoneyState());
-		} else {
-			System.out.println("Oops, out of gumballs!");
-			gumballMachine.setState(gumballMachine.getSoldOutState());
+		switch(type)
+		{
+			case OneQuarter:	
+			case TwoQuarters:
+			case AllCoins:
+				gumballMachine.releaseBall();
+				if (gumballMachine.getCount() > 0) {
+					gumballMachine.setState(gumballMachine.getNotEnoughMoneyState());
+				} else {
+					System.out.println("Oops, out of gumballs!");
+					gumballMachine.setState(gumballMachine.getSoldOutState());
+				}
+				break;
+			default:
+				break;
 		}
 	}
  

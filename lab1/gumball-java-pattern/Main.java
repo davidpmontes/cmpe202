@@ -3,20 +3,29 @@
 public class Main {
 
 	public static void main(String[] args) {
-		GumballMachine gumballMachine1 = new GumballMachine(5,  GumballMachine.Type.OneQuarter );
+		GumballMachine gumballMachine = new GumballMachine(5,  GumballMachine.Type.AllCoins );
 
-		System.out.println(gumballMachine1);
+		System.out.println(gumballMachine);
 
-		gumballMachine1.insertCoin( 25 );
-//		gumballMachine1.turnCrank();
+		gumballMachine.insertCoin( 25 );
+		
+		gumballMachine.insertCoin( 3 );
+		gumballMachine.insertCoin( 50 );
+
+		
+//		gumballMachine.insertCoin( 25 );
 //
-//		System.out.println(gumballMachine1);
+		gumballMachine.turnCrank();
+//		gumballMachine.turnCrank();
+
 //
-//		gumballMachine1.insertCoin( 25 );
-//		gumballMachine1.turnCrank();
-//		gumballMachine1.insertCoin( 25 );
-//		gumballMachine1.turnCrank();
+//		System.out.println(gumballMachine);
 //
-//		System.out.println(gumballMachine1);
+//		gumballMachine.insertCoin( 25 );
+//		gumballMachine.turnCrank();
+//		gumballMachine.insertCoin( 25 );
+//		gumballMachine.turnCrank();
+//
+//		System.out.println(gumballMachine);
 	}
 }
