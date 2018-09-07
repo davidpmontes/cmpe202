@@ -3,31 +3,33 @@
 public class GumballMachine {
  
 	State soldOutState;
-	State noQuarterState;
-	State hasQuarterState;
+	State notEnoughMoneyState;
+	State hasEnoughMoneyState;
 	State soldState;
  
 	State state = soldOutState;
 	int count = 0;
+	String type;
  
-	public GumballMachine(int numberGumballs) {
+	public GumballMachine(int numberGumballs, String type) {
 		soldOutState = new SoldOutState(this);
-		noQuarterState = new NoQuarterState(this);
-		hasQuarterState = new HasQuarterState(this);
+		notEnoughMoneyState = new NotEnoughMoneyState(this);
+		hasEnoughMoneyState = new HasEnoughMoneyState(this);
 		soldState = new SoldState(this);
-
+		
+		this.type = type;
 		this.count = numberGumballs;
  		if (numberGumballs > 0) {
-			state = noQuarterState;
+			state = notEnoughMoneyState;
 		} 
 	}
  
-	public void insertQuarter() {
-		state.insertQuarter();
+	public void insertCoin( int value) {
+		state.insertCoin( value );
 	}
  
-	public void ejectQuarter() {
-		state.ejectQuarter();
+	public void ejectMoney() {
+		state.ejectMoney();
 	}
  
 	public void turnCrank() {
@@ -52,7 +54,7 @@ public class GumballMachine {
  
 	void refill(int count) {
 		this.count = count;
-		state = noQuarterState;
+		state = notEnoughMoneyState;
 	}
 
     public State getState() {
@@ -64,11 +66,11 @@ public class GumballMachine {
     }
 
     public State getNoQuarterState() {
-        return noQuarterState;
+        return notEnoughMoneyState;
     }
 
     public State getHasQuarterState() {
-        return hasQuarterState;
+        return hasEnoughMoneyState;
     }
 
     public State getSoldState() {

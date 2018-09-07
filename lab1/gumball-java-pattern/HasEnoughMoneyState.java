@@ -1,19 +1,16 @@
 
-
-import java.util.Random;
-
-public class HasQuarterState implements State {
+public class HasEnoughMoneyState implements State {
 	GumballMachine gumballMachine;
  
-	public HasQuarterState(GumballMachine gumballMachine) {
+	public HasEnoughMoneyState(GumballMachine gumballMachine) {
 		this.gumballMachine = gumballMachine;
 	}
   
-	public void insertQuarter() {
+	public void insertCoin( int value) {
 		System.out.println("You can't insert another quarter");
 	}
  
-	public void ejectQuarter() {
+	public void ejectMoney() {
 		System.out.println("Quarter returned");
 		gumballMachine.setState(gumballMachine.getNoQuarterState());
 	}
