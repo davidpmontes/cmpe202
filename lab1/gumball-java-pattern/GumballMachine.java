@@ -16,6 +16,7 @@ public class GumballMachine {
 	State state = soldOutState;
 	int count = 0;
 	int money = 0;
+	int cost = 0;
 	Type type;
  
 	public GumballMachine(int numberGumballs, Type type) {
@@ -26,22 +27,34 @@ public class GumballMachine {
 		
 		this.type = type;
 		this.count = numberGumballs;
+		
+		switch(type)
+		{
+			case OneQuarter:
+				this.cost = 25;
+			case TwoQuarters:
+			case AllCoins:
+				this.cost = 50;
+				break;
+			default:
+				break;
+		}
  		if (numberGumballs > 0) {
 			state = notEnoughMoneyState;
 		} 
 	}
  
 	public void insertCoin( int value) {
-		state.insertCoin( value, this.type );
+		state.insertCoin( value );
 	}
  
 	public void ejectMoney() {
-		state.ejectMoney( money, this.type);
+		state.ejectMoney( money );
 	}
  
 	public void turnCrank() {
-		state.turnCrank(this.type);
-		state.dispense(this.type);
+		state.turnCrank( );
+		state.dispense( );
 	}
 
 	void setState(State state) {

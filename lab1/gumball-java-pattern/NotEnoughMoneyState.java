@@ -7,10 +7,10 @@ public class NotEnoughMoneyState implements State {
         this.gumballMachine = gumballMachine;
     }
  
-	public void insertCoin( int value, GumballMachine.Type type  ) {
+	public void insertCoin( int value ) {
 		gumballMachine.money += value;
 		
-		switch(type)
+		switch(gumballMachine.type)
 		{
 			case OneQuarter:
 				System.out.println("You inserted a quarter");
@@ -35,8 +35,8 @@ public class NotEnoughMoneyState implements State {
 		}
 	}
  
-	public void ejectMoney( int money, GumballMachine.Type type ) {
-		switch(type)
+	public void ejectMoney( int money ) {
+		switch(gumballMachine.type)
 		{
 			case OneQuarter:
 				System.out.println("You haven't inserted a quarter");
@@ -72,8 +72,8 @@ public class NotEnoughMoneyState implements State {
 		}
 	}
  
-	public void turnCrank( GumballMachine.Type type ) {
-		switch(type)
+	public void turnCrank( ) {
+		switch(gumballMachine.type)
 		{
 			case OneQuarter:
 				System.out.println("You turned, but there's no quarter");
@@ -89,8 +89,8 @@ public class NotEnoughMoneyState implements State {
 		}
 	 }
  
-	public void dispense( GumballMachine.Type type ) {
-		switch(type)
+	public void dispense( ) {
+		switch(gumballMachine.type)
 		{
 			case OneQuarter:
 			case TwoQuarters:

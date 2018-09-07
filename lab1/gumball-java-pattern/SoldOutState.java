@@ -7,8 +7,8 @@ public class SoldOutState implements State {
         this.gumballMachine = gumballMachine;
     }
  
-	public void insertCoin( int value, GumballMachine.Type type ) {
-		switch(type)
+	public void insertCoin( int value ) {
+		switch(gumballMachine.type)
 		{
 			case OneQuarter:
 			case TwoQuarters:
@@ -22,8 +22,8 @@ public class SoldOutState implements State {
 		}
 	}
  
-	public void ejectMoney( int money, GumballMachine.Type type ) {
-		switch(type)
+	public void ejectMoney( int money ) {
+		switch(gumballMachine.type)
 		{
 			case OneQuarter:
 			case TwoQuarters:
@@ -37,8 +37,8 @@ public class SoldOutState implements State {
 		}
 	}
  
-	public void turnCrank( GumballMachine.Type type ) {
-		switch(type)
+	public void turnCrank( ) {
+		switch(gumballMachine.type)
 		{
 			case OneQuarter:
 			case TwoQuarters:
@@ -50,8 +50,8 @@ public class SoldOutState implements State {
 		}
 	}
  
-	public void dispense( GumballMachine.Type type ) {
-		switch(type)
+	public void dispense( ) {
+		switch(gumballMachine.type)
 		{
 			case OneQuarter:
 			case TwoQuarters:
