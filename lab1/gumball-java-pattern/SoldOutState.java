@@ -22,7 +22,7 @@ public class SoldOutState implements State {
 		}
 	}
  
-	public void ejectMoney( int money ) {
+	public void ejectMoney( ) {
 		switch(gumballMachine.type)
 		{
 			case OneQuarter:

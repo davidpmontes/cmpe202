@@ -21,7 +21,7 @@ public class HasEnoughMoneyState implements State {
 		}
 	}
  
-	public void ejectMoney( int money ) {
+	public void ejectMoney( ) {
 		switch (gumballMachine.type)
 		{
 			case OneQuarter:
@@ -36,6 +36,7 @@ public class HasEnoughMoneyState implements State {
 			default:
 				break;
 		}
+		gumballMachine.money = 0;
 		gumballMachine.setState(gumballMachine.getNotEnoughMoneyState());
 	}
  
@@ -50,6 +51,7 @@ public class HasEnoughMoneyState implements State {
 			default:
 				break;
 		}
+		gumballMachine.money = 0;
 		gumballMachine.setState(gumballMachine.getSoldState());
 	}
 

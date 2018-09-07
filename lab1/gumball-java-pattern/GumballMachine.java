@@ -49,7 +49,7 @@ public class GumballMachine {
 	}
  
 	public void ejectMoney() {
-		state.ejectMoney( money );
+		state.ejectMoney( );
 	}
  
 	public void turnCrank() {

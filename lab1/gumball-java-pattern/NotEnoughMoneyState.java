@@ -8,26 +8,50 @@ public class NotEnoughMoneyState implements State {
     }
  
 	public void insertCoin( int value ) {
-		gumballMachine.money += value;
 		
 		switch(gumballMachine.type)
 		{
 			case OneQuarter:
-				System.out.println("You inserted a quarter");
-				gumballMachine.setState(gumballMachine.getHasEnoughMoneyState());
+				if (value == 25)
+				{
+					System.out.println("You inserted a quarter");
+					gumballMachine.setState(gumballMachine.getHasEnoughMoneyState());
+					gumballMachine.money += value;
+				}
+				else
+				{
+					System.out.println("Quarter not accepted");
+				}
 				break;
 			case TwoQuarters:
-				System.out.println("You inserted a quarter");
-				if (gumballMachine.money == 50)
+				if (value == 25)
 				{
-					gumballMachine.setState(gumballMachine.getHasEnoughMoneyState());
+					System.out.println("You inserted a quarter");
+					gumballMachine.money += value;
+					if (gumballMachine.money == gumballMachine.cost)
+					{
+						gumballMachine.setState(gumballMachine.getHasEnoughMoneyState());
+					}
+				}
+				else
+				{
+					System.out.println("Quarter not accepted");
 				}
 				break;
 			case AllCoins:
-				System.out.println(String.format("You inserted %d cents", value));
-				if (gumballMachine.money >= 50)
+				if (value > 0)
 				{
-					gumballMachine.setState(gumballMachine.getHasEnoughMoneyState());
+					System.out.println(String.format("You inserted %d cents", value));
+					gumballMachine.money += value;
+					
+					if (gumballMachine.money >= gumballMachine.cost)
+					{
+						gumballMachine.setState(gumballMachine.getHasEnoughMoneyState());
+					}
+				}
+				else
+				{
+					System.out.println("Coin not accepted");
 				}
 				break;
 			default:
@@ -35,7 +59,7 @@ public class NotEnoughMoneyState implements State {
 		}
 	}
  
-	public void ejectMoney( int money ) {
+	public void ejectMoney( ) {
 		switch(gumballMachine.type)
 		{
 			case OneQuarter:
