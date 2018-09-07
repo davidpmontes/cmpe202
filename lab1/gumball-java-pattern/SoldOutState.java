@@ -11,7 +11,7 @@ public class SoldOutState implements State {
 		System.out.println("You can't insert a quarter, the machine is sold out");
 	}
  
-	public void ejectMoney( GumballMachine.Type type ) {
+	public void ejectMoney( int money, GumballMachine.Type type ) {
 		System.out.println("You can't eject, you haven't inserted a quarter yet");
 	}
  

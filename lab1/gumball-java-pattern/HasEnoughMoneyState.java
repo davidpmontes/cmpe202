@@ -7,27 +7,63 @@ public class HasEnoughMoneyState implements State {
 	}
   
 	public void insertCoin( int value, GumballMachine.Type type) {
-//		switch (type)
-//		{
-//			case "OneQuarter":
-//				break;
-//				
-//		}
-		System.out.println("You can't insert another quarter");
+		switch (type)
+		{
+			case OneQuarter:
+			case TwoQuarters:
+				System.out.println("You can't insert another quarter");
+				break;
+			case AllCoins:
+				System.out.println("You can't insert another coin");
+				break;
+			default:
+				break;
+		}
 	}
  
-	public void ejectMoney( GumballMachine.Type type ) {
-		System.out.println("Quarter returned");
-		gumballMachine.setState(gumballMachine.getNoQuarterState());
+	public void ejectMoney( int money, GumballMachine.Type type ) {
+		switch (type)
+		{
+			case OneQuarter:
+				System.out.println("Quarter returned");
+				break;
+			case TwoQuarters:
+				System.out.println("Quarters returned");
+				break;
+			case AllCoins:
+				System.out.println("Coins returned");
+				break;
+			default:
+				break;
+		}
+		gumballMachine.setState(gumballMachine.getNotEnoughMoneyState());
 	}
  
 	public void turnCrank( GumballMachine.Type type ) {
-		System.out.println("You turned...");
+		switch (type)
+		{
+			case OneQuarter:
+			case TwoQuarters:
+			case AllCoins:
+				System.out.println("You turned...");
+				break;
+			default:
+				break;
+		}
 		gumballMachine.setState(gumballMachine.getSoldState());
 	}
 
     public void dispense( GumballMachine.Type type ) {
-        System.out.println("No gumball dispensed");
+    	switch (type)
+		{
+			case OneQuarter:
+			case TwoQuarters:
+			case AllCoins:
+		        System.out.println("No gumball dispensed");
+				break;
+			default:
+				break;
+		}
     }
  
 	public String toString() {

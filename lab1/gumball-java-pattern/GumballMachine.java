@@ -15,6 +15,7 @@ public class GumballMachine {
  
 	State state = soldOutState;
 	int count = 0;
+	int money = 0;
 	Type type;
  
 	public GumballMachine(int numberGumballs, Type type) {
@@ -35,7 +36,7 @@ public class GumballMachine {
 	}
  
 	public void ejectMoney() {
-		state.ejectMoney(this.type);
+		state.ejectMoney( money, this.type);
 	}
  
 	public void turnCrank() {
@@ -71,11 +72,11 @@ public class GumballMachine {
         return soldOutState;
     }
 
-    public State getNoQuarterState() {
+    public State getNotEnoughMoneyState() {
         return notEnoughMoneyState;
     }
 
-    public State getHasQuarterState() {
+    public State getHasEnoughMoneyState() {
         return hasEnoughMoneyState;
     }
 
