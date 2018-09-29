@@ -1,3 +1,5 @@
+1. CRC Cards
+
 |---------------------------------------| |---------------------------------------------|
 |					| |						|
 | Reservation				| | Reservation Manager				|
@@ -45,7 +47,12 @@
 |                                       | |						|
 | Collaborators:                        | | Collaborators:				|
 |  - Reservation Manager                | |  - Table Manager				|
-|  - Table Manager                      | |						|
+|		                        | |						|
 |                                       | |						|
 |                                       | |						|
 |---------------------------------------| |---------------------------------------------|
+
+2. Design Patterns
+   I will use the Singleton Pattern.  The WaitList, Reservation Manager, Table Manager
+   and Restaurant Manager will be limited to single objects. There should only be one
+   of each object because there is no benefit from having multiple copies of them.
