@@ -1,56 +1,82 @@
 1. CRC Cards
 
-|---------------------------------------| |---------------------------------------------|
-|					| |						|
-| Reservation				| | Reservation Manager				|
-| -------------------------------------	| | -------------------------------		|
-| Responsibilities:			| | Responsibilities:				|
-|  - Tracks name			| |  - Creates Reservations			|
-|  - Tracks cell number			| |  - Deletes Reservations			|
-|  - Tracks number of people		| |  - Notifies Table Manager of new Reservation|
-|  - Tracks time of reservation		| |  - Notifies WaitList table is available	|
-|					| |						|
-| Collaborators:			| | Collaborators:				|
-|  - Reservation Manager		| |  - Reservation				|
-|					| |  - Table Manager		 		|
-|					| |  - WaitList					|
-|					| |						|
-|---------------------------------------| |---------------------------------------------|
+---------------------------------------------
 
-|---------------------------------------| |---------------------------------------------|
-|                                       | |						|
-| Table                                 | | Table Manager				|
-| ------------------------------------- | | ------------------------------------	|
-| Responsibilities:                     | | Responsibilities:				|
-|  - Tracks table number		| |  - Creates Tables				|
-|  - Tracks number of seats             | |  - Deletes Tables				|
-|  - Tracks availability	     	| |  - Notifies Reservation Manager availability|
-|			                | |						|
-|					| |						|
-| Collaborators:                        | | Collaborators:      			|
-|  - Table Manager                      | |  - Reservation Manager			|
-|                                       | |  - Table					|
-|                                       | |						|
-|                                       | |						|
-|---------------------------------------| |---------------------------------------------|
+Reservation
 
-|---------------------------------------| |---------------------------------------------|
-|                                       | |						|
-| WaitList                   		| | Restaurant Manager				|
-| ------------------------------------- | | ----------------------			|
-| Responsibilities:                     | | Responsibilities:				|
-|  - Receives new Reservation from app	| |  - Notify Table Manager table is ready 	|
-|  - Tells Reservation Manager to add	| |  - Notify Table Manager table is occupied	|
-|    a reservation			| |  						|
-|  - Notifies app of available table	| |						|
-|    	                 		| |						|
-|                                       | |						|
-| Collaborators:                        | | Collaborators:				|
-|  - Reservation Manager                | |  - Table Manager				|
-|		                        | |						|
-|                                       | |						|
-|                                       | |						|
-|---------------------------------------| |---------------------------------------------|
+Responsibilities:
+Tracks name
+Tracks cell number
+Tracks number of people
+Tracks time of reservation
+
+Collaborators:
+Reservation Manager
+
+---------------------------------------------
+
+Reservation Manager
+  
+Responsibilities:
+Creates Reservations 
+Deletes Reservations 
+Notifies Table Manager of new Reservation
+Notifies WaitList table is available  
+
+Collaborators:
+Reservation 
+Table Manager
+WaitList
+
+----------------------------------------------
+
+Table
+
+Responsibilities:
+Tracks table number
+Tracks number of seats
+Tracks availability
+
+Collaborators:
+Table Manager
+
+-----------------------------------------------
+
+Table Manager
+
+Responsibilities:
+Creates Tables
+Deletes Tables
+Notifies Reservation Manager of availability
+
+Collaborators:
+Reservation Manager
+Table
+
+-----------------------------------------------
+
+WaitList
+
+Responsibilities:
+Receives new Reservation from app
+Tells Reservation Manager to add a reservation
+Notifies app of available table
+
+Collaborators:
+Reservation Manager
+
+------------------------------------------------
+
+Restaurant Manager
+
+Responsibilities:
+Notify Table Manager table is ready
+Notify Table Manager table is occupied
+
+Collaborators:
+Table Manager
+
+------------------------------------------------
 
 2. Design Patterns
    I will use the Singleton Pattern.  The WaitList, Reservation Manager, Table Manager
