@@ -5,9 +5,9 @@
 Reservation
 
 Responsibilities:
-Tracks name
-Tracks cell number
-Tracks number of people
+Tracks name,
+Tracks cell number,
+Tracks number of people,
 Tracks time of reservation
 
 Collaborators:
@@ -18,14 +18,14 @@ Reservation Manager
 Reservation Manager
   
 Responsibilities:
-Creates Reservations 
-Deletes Reservations 
-Notifies Table Manager of new Reservation
-Notifies WaitList table is available  
+Creates Reservations,
+Deletes Reservations,
+Notifies Table Manager of new Reservation,
+Notifies WaitList table is available
 
 Collaborators:
-Reservation 
-Table Manager
+Reservation,
+Table Manager,
 WaitList
 
 ----------------------------------------------
@@ -33,8 +33,8 @@ WaitList
 Table
 
 Responsibilities:
-Tracks table number
-Tracks number of seats
+Tracks table number,
+Tracks number of seats,
 Tracks availability
 
 Collaborators:
@@ -45,12 +45,12 @@ Table Manager
 Table Manager
 
 Responsibilities:
-Creates Tables
-Deletes Tables
+Creates Tables,
+Deletes Tables,
 Notifies Reservation Manager of availability
 
 Collaborators:
-Reservation Manager
+Reservation Manager,
 Table
 
 -----------------------------------------------
@@ -58,8 +58,8 @@ Table
 WaitList
 
 Responsibilities:
-Receives new Reservation from app
-Tells Reservation Manager to add a reservation
+Receives new Reservation from app,
+Tells Reservation Manager to add a reservation,
 Notifies app of available table
 
 Collaborators:
@@ -70,7 +70,7 @@ Reservation Manager
 Restaurant Manager
 
 Responsibilities:
-Notify Table Manager table is ready
+Notify Table Manager table is ready,
 Notify Table Manager table is occupied
 
 Collaborators:
