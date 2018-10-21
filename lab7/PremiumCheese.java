@@ -1,19 +1,18 @@
-public class Toppings extends LeafDecorator
+public class PremiumCheese extends LeafDecorator
 {
     private String[] options ;
     
     
-    public Toppings( String d )
+    public PremiumCheese( String d )
     {
         super(d) ;
     }
     
-    // 4 toppings free, extra +.75
     public void setOptions( String[] options )
     {
         this.options = options ;
-        //if ( options.length > 4 )
-        //    this.price += (options.length-4) * 69 ;
+        if ( options.length > 0 )
+            this.price += options.length * 1.5 ;
     }
     
     public String getDescription() 

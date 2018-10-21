@@ -13,12 +13,12 @@ public class Sauce extends LeafDecorator
     {
         this.options = options ;
         if ( options.length > 1 )
-            this.price += (options.length-1) * 0.75 ;
+            this.price += (options.length - 1) * .5 ;
     }
     
     public String getDescription() 
     {
-        String desc = "   " ;
+        String desc = "" ;
         for ( int i = 0; i<options.length; i++ )
         {
             if (i>0) desc += " + " + options[i] ;

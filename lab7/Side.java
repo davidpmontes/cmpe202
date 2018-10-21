@@ -1,19 +1,21 @@
-public class Toppings extends LeafDecorator
+public class Side extends LeafDecorator
 {
     private String[] options ;
     
     
-    public Toppings( String d )
+    public Side( String d )
     {
         super(d) ;
     }
     
-    // 4 toppings free, extra +.75
+    // 1 cheese free, extra cheese +1.00
     public void setOptions( String[] options )
     {
         this.options = options ;
-        //if ( options.length > 4 )
-        //    this.price += (options.length-4) * 69 ;
+        for ( int i = 0; i<options.length; i++ )
+        {
+            if ( "Shoestring Fries".equals(options[i]) ) this.price += 3.00 ;
+        }
     }
     
     public String getDescription() 

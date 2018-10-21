@@ -13,12 +13,12 @@ public class Cheese extends LeafDecorator
     {
         this.options = options ;
         if ( options.length > 1 )
-            this.price += (options.length-1) * 1.00 ;
+            this.price += (options.length - 1) * 1.00 ;
     }
     
     public String getDescription() 
     {
-        String desc = "   " ;
+        String desc = "" ;
         for ( int i = 0; i<options.length; i++ )
         {
             if (i>0) desc += " + " + options[i] ;

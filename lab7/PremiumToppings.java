@@ -1,19 +1,24 @@
-public class Toppings extends LeafDecorator
+public class PremiumToppings extends LeafDecorator
 {
     private String[] options ;
     
     
-    public Toppings( String d )
+    public PremiumToppings( String d )
     {
         super(d) ;
     }
     
-    // 4 toppings free, extra +.75
+    // premium topping +1.50
     public void setOptions( String[] options )
     {
         this.options = options ;
-        //if ( options.length > 4 )
-        //    this.price += (options.length-4) * 69 ;
+        for ( int i = 0; i<options.length; i++ )
+        {
+            if ( "Marinated Tomatoes".equals(options[i]) ) this.price += 3.00 ;
+            if ( "Sunny Side Up Egg".equals(options[i]) ) this.price += 2.00 ;
+
+            
+        }
     }
     
     public String getDescription() 

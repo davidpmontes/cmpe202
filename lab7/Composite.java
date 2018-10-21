@@ -14,9 +14,11 @@ public class Composite implements Component {
 
 	public void printDescription() {
         System.out.println( description );
+        System.out.print("\n\n");
         for (Component obj  : components)
         {
             obj.printDescription();
+            System.out.print("\n\n");
         }
     }
 
