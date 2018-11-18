@@ -1,4 +1,4 @@
-package strategy;
+package strategyFunctional;
 
 /*
     Source:  http://www.cs.ubc.ca/~harrison/Java/MergeSortAlgorithm.java.html

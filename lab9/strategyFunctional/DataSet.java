@@ -1,4 +1,4 @@
-package strategy;
+package strategyFunctional;
 import java.util.ArrayList;
 import java.util.stream.IntStream;
 
@@ -6,16 +6,25 @@ public class DataSet {
 
     private ArrayList<Integer> data = new ArrayList<Integer>()  ;
 	private SortingStrategy strategy;
-	private int num = 3;
+	private int num = 12;
     private int[] sortedList = new int[num] ;
 
-    public DataSet()
+    public DataSet(SortingStrategy ss)
     {
-        strategy = new BubbleSort() ;
+        strategy = ss ;
         data.clear();
-        data.add( 3 ) ;
-        data.add( 1 ) ;
-        data.add( 5 ) ;
+        data.add( 198 ) ;
+        data.add( 56  ) ;
+        data.add( 12  ) ;
+        data.add( 34  ) ;
+        data.add( 62  ) ;
+        data.add( 99  ) ;
+        data.add( 145  ) ;
+        data.add( 87  ) ;
+        data.add( 26  ) ;
+        data.add( 37  ) ;
+        data.add( 13  ) ;
+        data.add( 16  ) ;  
         
 
         //for ( int i = 0; i < data.size(); i++ )

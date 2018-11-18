@@ -1,4 +1,4 @@
-package strategy;
+package strategyOriginal;
 
 /*
     Source:  http://www.cs.ubc.ca/~harrison/Java/QSortAlgorithm.java.html
