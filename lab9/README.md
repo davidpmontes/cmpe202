@@ -1,5 +1,3 @@
-# CMPE202 Lab 9
-
 #### Strategy
 
 #### Functional
